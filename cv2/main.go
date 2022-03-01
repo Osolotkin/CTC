@@ -8,8 +8,8 @@ import (
 )
 
 const (
-    ST_GAS    	= 0;
-    ST_DIESEL	= 1;
+    	ST_GAS    	= 0;
+    	ST_DIESEL	= 1;
 	ST_LPG		= 2;
 	ST_ELECTRIC	= 3;
 	ST_COUNT	= 4;
