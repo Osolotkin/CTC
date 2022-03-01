@@ -8,21 +8,21 @@ import (
 )
 
 const (
-  ST_GAS      = 0;
-  ST_DIESEL   = 1;
-	ST_LPG		  = 2;
+    ST_GAS    	= 0;
+    ST_DIESEL	= 1;
+	ST_LPG		= 2;
 	ST_ELECTRIC	= 3;
-	ST_COUNT	  = 4;
+	ST_COUNT	= 4;
 
-	GAS_COUNT 		  = 4;
-	DIESEL_COUNT 	  = 4;
-	LPG_COUNT 		  = 4;
+	GAS_COUNT 		= 4;
+	DIESEL_COUNT 	= 4;
+	LPG_COUNT 		= 4;
 	ELECTRIC_COUNT 	= 8;
 
 	STATION_COUNT = GAS_COUNT + DIESEL_COUNT + LPG_COUNT + ELECTRIC_COUNT;
 	CACH_REGISTER_COUNT = 2;
 
-	MAX_JOBS_PER_STATION = 10000;
+	MAX_JOBS_PER_STATION = 1000;
 
 	TIME_RESOLUTION = time.Microsecond;
 
@@ -94,9 +94,9 @@ func makeStation(station *ServicePoint, stationType int) {
 
 func sleep(min float64, max float64) {
 
-	var delta float64 = min - max; 
+	var delta float64 = max - min; 
 	var duration float64 = min + rand.Float64() * delta;
-	time.Sleep(time.Duration(duration) * TIME_RESOLUTION);
+	time.Sleep(time.Duration(duration * float64(TIME_RESOLUTION)));
 
 }
 
