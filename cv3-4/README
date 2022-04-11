@@ -1,0 +1,18 @@
+http://localhost:8080/ping
+app should response pong
+
+insert two sample records
+http://localhost:8080/update?name=whatever&price=1&amount=82
+http://localhost:8080/update?name=whateversoever&price=2&amount=88
+
+should display them both
+http://localhost:8080/list
+
+should display only first
+http://localhost:8080/get?name=whatever
+
+should delete first record
+http://localhost:8080/delete?name=whatever
+
+hopefuly only second will be displayed
+http://localhost:8080/list
