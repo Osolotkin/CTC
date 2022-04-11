@@ -1,0 +1,28 @@
+services:
+  app:
+    container_name: gogo_app
+    image: gogo
+    build:
+      context: .
+      dockerfile: dockerfile
+    environment:
+      - MONGO_URI=mongodb://gogo_db:27017
+    ports:
+      - "8080:8080"
+    volumes:
+      - gogo_app_vol:/app
+    depends_on:
+      - mongo
+  mongo:
+    container_name: gogo_db
+    image: mongo:5.0.6
+    ports:
+      - "27017:27017"
+    volumes:
+      - gogo_db_vol:/data
+ 
+volumes:
+  gogo_app_vol:
+    driver: local
+  gogo_db_vol:
+    driver: local
