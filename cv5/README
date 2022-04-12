@@ -1,7 +1,7 @@
 etcd by měla běžet na portu 2379
 
 PING 
-  -> by měl vratiti Pong, jinak client se nemuže dosahnout server
+  -> by měl vratiti Pong, jinak client nemuže dosahnout server
 
 GET <key>
   -> vrati hodnotu konkretn9ho kliče, nebo prazdny řetězec
