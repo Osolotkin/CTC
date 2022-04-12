@@ -88,7 +88,7 @@ func strcmp(strA string, strB string) bool {
 
 func printHelp() {
 
-	fmt.Printf("Commands\n  --------\n\tPING\n\tGET\t <key>\n\tPOST\t <key> <value>\n\tLIST\n\tDELETE\t <key>\n");
+	fmt.Printf("Commands\n  --------\n\tPING\n\tGET\t <key>\n\tPOST\t <key> <value>\n\tLIST\t <key>\n\tDELETE\t <key>\n");
 
 }
 
