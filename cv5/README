@@ -1,0 +1,16 @@
+etcd by měla běžet na portu 2379
+
+PING 
+  -> by měl vratiti Pong, jinak client se nemuže dosahnout server
+
+GET <key>
+  -> vrati hodnotu konkretn9ho kliče, nebo prazdny řetězec
+
+LIST <key>
+  -> vraci hodnoty s odpovidajicim prefixem, nebo prazdny řetězec
+
+POST <key> <val>
+  -> zapiše novou hodnotu k danemu kliči
+
+DELETE <key>
+  -> odstrani zapis s přislušným kličem
