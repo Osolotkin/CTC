@@ -1,0 +1,12 @@
+nejprve přidat etcd
+kubectl apply -f .\etcd_lite.yml
+
+podivat se na ip a dle toho přepsat hodnotu env variable v app.yml
+pak přidat app
+kubectl apply -f .\app.yml
+
+po načtení port=forwarding
+kubectl port-forward deployment/gogo-app 8080:8080
+
+nakonec spustit klienta a snad to bude fungovat
+go run ./{path}/client :8080
