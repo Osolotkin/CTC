@@ -1,0 +1,20 @@
+syntax = "proto3";
+package gogo;
+option go_package = "./gogo";
+
+service GoGoService {
+    rpc Ping(Message) returns (Message) {}
+    rpc Get(Message) returns (Message) {}
+    rpc Post(KeyValuePair) returns (Message) {}
+    rpc List(Message) returns (Message) {}
+    rpc Delete(Message) returns (Message) {}
+}
+
+message Message {
+    string body = 1;
+}
+
+message KeyValuePair {
+    string key = 1;
+    string val = 2;
+}
