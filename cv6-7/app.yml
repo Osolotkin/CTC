@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gogo-app
+spec:
+  selector:
+    matchLabels:
+      app: gogo-app
+  template:
+    metadata:
+      labels:
+        app: gogo-app
+    spec:
+      containers:
+      - name: gogo-app
+        image: docker.io/msdfsf/gogo:0.0
+        ports:
+          - containerPort: 8080
+        env:
+            - name: DB_ENDPOINT
+              value: ":2379"
+        #livenessProbe:
+        #  httpGet:
+        #    path: /health
+        #    port: 8081
+        #    scheme: HTTP
+        #  initialDelaySeconds: 10
+        #  periodSeconds: 15
+        #  timeoutSeconds: 5
+        #readinessProbe:
+        #  httpGet:
+        #    path: /readiness
+        #    port: 8081
+        #    scheme: HTTP
+        #  initialDelaySeconds: 10
+        # timeoutSeconds: 5
