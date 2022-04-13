@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"os"
 	"time"
 
 	gogo "project/project/gogo"
@@ -18,7 +19,6 @@ import (
 
 const ADDR string = ":";
 const PORT string = "8080";
-const DB_ENDPOINT string = ":2379";
 
 var db *etcd.Client;
 
@@ -69,7 +69,7 @@ func (s *Service) Post(ctx context.Context, in *gogo.KeyValuePair) (*gogo.Messag
 	keyStr := in.Key;
 	valStr := in.Val;
 
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 5 * time.Second)
     _, err := db.Put(ctx, keyStr, valStr);
 	cancel();
 
@@ -132,6 +132,8 @@ func (s *Service) Delete(ctx context.Context, in *gogo.Message) (*gogo.Message, 
 }
 
 func main() {
+
+	DB_ENDPOINT := os.Getenv("DB_ENDPOINT");
   
 	// listetn to a port
 
