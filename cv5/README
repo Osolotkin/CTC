@@ -1,5 +1,3 @@
-etcd by měla běžet na portu 2379
-
 PING 
   -> by měl vratiti Pong, jinak client nemuže dosahnout server
 
