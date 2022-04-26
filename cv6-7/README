@@ -6,4 +6,4 @@ po načtení port=forwarding
 kubectl port-forward deployment/gogo-app 8080:8080
 
 nakonec spustit klienta a snad to bude fungovat (přikazy jak v cv5)
-go run ./{path}/client :8080
+go run ./project/client/main.go :8080
