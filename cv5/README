@@ -1,3 +1,6 @@
+Klient ve složce project\client
+go run ./project/client/main.go
+
 PING 
   -> by měl vratiti Pong, jinak client nemuže dosahnout server
 
